@@ -17,8 +17,8 @@ Formalin-mixed Orange, deployed as a Streamlit web app.
 ## Training
 
 Run either notebook top to bottom (Kaggle or Colab version). Both:
-1. Download the FruitVision dataset directly (`wget`, no local upload needed)
-2. Curate just the Fresh Orange and Formalin-mixed Orange classes out of FruitVision's 15 total classes
+1. Load the FruitVision-derived dataset (attach [this Kaggle dataset](https://www.kaggle.com/datasets/sumitkumerdas/fresh-rotten-and-formalin-mixed-fruit-detection) via "Add Data" on Kaggle, or download it directly if running on Colab)
+2. Curate just the Fresh Orange and Formalin-mixed Orange classes out of the full multi-class dataset
 3. Split 70/15/15 into train/val/test
 4. Train MobileNetV2 (frozen feature extraction, then fine-tuned on the top 30 layers)
 5. Select the better checkpoint based on validation loss, precision, recall, F1, and AUC — not accuracy alone
@@ -53,7 +53,7 @@ Opens automatically at `http://localhost:8501`.
 - **Input size:** 224×224×3
 - **Output:** single sigmoid unit (binary: Fresh Orange vs Formalin-mixed Orange)
 - **Loss:** binary cross-entropy with label smoothing (0.1), to avoid overconfident 0%/100% predictions
-- **Dataset:** [FruitVision](https://data.mendeley.com/datasets/xkbjx8959c/2) (Bijoy et al., 2025, Mendeley Data, DOI 10.17632/xkbjx8959c.2)
+- **Dataset:** [Fresh, Rotten and Formalin-mixed Fruit Detection](https://www.kaggle.com/datasets/sumitkumerdas/fresh-rotten-and-formalin-mixed-fruit-detection) (Kaggle, uploaded by sumitkumerdas)
 
 ## Known limitation
 
