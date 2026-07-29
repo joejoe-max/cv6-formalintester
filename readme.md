@@ -8,11 +8,9 @@ Formalin-mixed Orange, deployed as a Streamlit web app.
 | File | Purpose |
 |---|---|
 | `orange_train.ipynb` | Training notebook (Kaggle) — downloads FruitVision, curates the two orange classes, trains, evaluates, saves `model.keras` |
-| `orange_train_colab.ipynb` | Same pipeline, adapted for Google Colab |
 | `app.py` | Streamlit app — loads `model.keras` and serves predictions |
 | `model.keras` | Trained model file (produced by the training notebook — copy it in here) |
 | `requirements.txt` | Python package dependencies |
-| `report.txt` | Project report |
 
 ## Training
 
